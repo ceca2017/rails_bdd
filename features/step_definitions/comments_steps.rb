@@ -12,12 +12,13 @@ Given(/^I fill in field "([^"]*)" with "([^"]*)"$/) do |field, content|
   fill_in field, with: content
 end
 
-Given(/^I click "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I click on "([^"]*)"$/) do |button|
+  click_link_or_button button
 end
 
-Then(/^I should be on page for article "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should be on page for article "([^"]*)"$/) do |title|
+  article = Article.where(title: title).first
+  expect(page.current_path).to eq article_path(article)
 end
 
 Then(/^there should be "([^"]*)" comment in the database$/) do |arg1|
