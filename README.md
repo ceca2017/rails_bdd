@@ -1,8 +1,7 @@
 ## Commenting on articles ##
 
-This is a very simple web application.
-
-It allows you to view a list of published articles on the home page.
+This is a simple web application that will allow you to view a list of
+published articles on the home page.
 
 Clicking on the title of an article will take you to the article's page.
 
