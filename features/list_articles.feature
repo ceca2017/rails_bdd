@@ -17,11 +17,3 @@ Feature: List articles on landing page
     And I should see "Learn Rails 5"
     And I should see "Build awesome rails applications"
     And I should see "by Amber at 2017-05-08"
-
-
-  # Scenario: Viewing list of articles on the application's landing page
-  #   When I am on the landing page
-  #   Then I should see "A breaking news item"
-  #   And I should see "Some really breaking action"
-  #   And I should see "Learn Rails 5"
-  #   And I should see "Build awesome rails applications"

@@ -1,7 +1,6 @@
 Given(/^I visit the page for article "([^"]*)"$/) do |title|
   article = Article.where(title: title).first
-  # visit "/articles/#{article.id}"
-  visit article_path(article)
+  visit article_path(article)    # same as: visit "/articles/#{article.id}"
 end
 
 Then(/^I should see content "([^"]*)"$/) do |content|
@@ -24,24 +23,3 @@ end
 Then(/^there should be "([^"]*)" comment in the database$/) do |number|
   expect(Comment.count).to eq number.to_i
 end
-
-
-
-
-
-
-# Given(/^I fill in field "([^"]*)" with "([^"]*)" under article "([^"]*)"$/) do |field, comment, title|
-#   fill_in(field, with: comment)
-# end
-#
-# Given(/^I click on the link "([^"]*)" to article "([^"]*)"$/) do |link_name, title|
-#   click_link(link_name)
-# end
-#
-# Then(/^I should see content "([^"]*)"$/) do |content|
-#   expect(page).to have content
-# end
-#
-# Then(/^I should see link "([^"]*)"$/) do |link_name|
-#   expect(page).to have content
-# end
