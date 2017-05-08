@@ -1,5 +1,10 @@
-<%= @article.title %>
-<%= @article.content %>
+<%= @article.title %><br />
+<%= @article.content %><br />
+<% @article.comments.each do |comment| %>
+  <%= comment.comment %><br />
+  <%= comment.email %><br />
+<% end %>
+
 
 <%= form_for [@article, @article.comments.new] do |f| %>
   <%= f.label :comment %>
