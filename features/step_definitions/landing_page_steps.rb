@@ -3,6 +3,7 @@ When(/^I am on the landing page$/) do
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
+  #binding.pry
   expect(page).to have_content content
 end
 

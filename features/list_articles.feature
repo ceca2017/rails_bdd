@@ -13,10 +13,10 @@ Feature: List articles on landing page
     When I am on the landing page
     And I should see "A breaking news item"
     And I should see "Some really breaking action"
-    And I should see "Written by Thomas at 2016-12-15"
+    And I should see "Written by Thomas at 2017-05-08"
     And I should see "Learn Rails 5"
     And I should see "Build awesome rails applications"
-    And I should see "by Amber at 2016-12-15"
+    And I should see "by Amber at 2017-05-08"
 
 
   # Scenario: Viewing list of articles on the application's landing page
