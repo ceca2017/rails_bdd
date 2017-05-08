@@ -12,8 +12,8 @@ Feature: Add a comment to an article
   Scenario: Create a comment
     Given I visit the page for article "A breaking news item"
     Then I should see content "Some really breaking action"
-    Given I fill in field "comment" with "Great article!"
-    And I fill in field "Your e-mail" with "a@b.com"
+    Given I fill in field "comment_comment" with "Great article!"
+    And I fill in field "comment_email" with "a@b.com"
     And I click "Submit"
     Then I should be on page for article "A breaking news item"
     And I should see "Great article!"
