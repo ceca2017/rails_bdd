@@ -8,8 +8,8 @@ Then(/^I should see content "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
 
-Given(/^I fill in field "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I fill in field "([^"]*)" with "([^"]*)"$/) do |field, content|
+  fill_in field, with: content
 end
 
 Given(/^I click "([^"]*)"$/) do |arg1|
