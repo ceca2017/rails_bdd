@@ -7,8 +7,10 @@ Then(/^I should see "([^"]*)"$/) do |content|
 end
 
 Given(/^the following articles exists$/) do |table|
-  #binding.pry
+  # binding.pry
   table.hashes.each do |hash|
-    Article.create!(hash)
+    # Article.create!(hash)
+    FactoryGirl.create(:article, hash)
   end
+  # binding.pry
 end

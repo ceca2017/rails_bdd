@@ -4,17 +4,42 @@ Feature: Add a comment to an article
   I would like to be able to add a comment and optionally an e-mail address to this article
 
   Background:
-  Given the following articles exists
-    | title                 | content                             |
-    | A breaking news item  | Some really breaking action         |
-    | Learn Rails 5         | Build awesome rails applications    |
+    Given the following articles exists
+      | title                 | content                             | author    |
+      | A breaking news item  | Some really breaking action         | Thomas    |
+      | Learn Rails 5         | Build awesome rails applications    | Amber     |
 
-  Scenario: Viewing list of articles on the application's landing page
-    Given I fill in field "Comment" with "Great article!" under article "A breaking news item"
-    And I fill in field "Email" with "a@b.com" under article "A breaking news item"
-    And I click on the link "Submit" to article "A breaking news item"
-    Then I should see content "Great article"
-    And I should see link "a@b.com"
+  Scenario: Create a comment
+    Given I visit the page for article "A breaking news item"
+    Then I should see content "Some really breaking action"
+    Given I fill in field "Add a comment" with "Great article!"
+    And I fill in field "Your e-mail" with "a@b.com"
+    And I click "Submit"
+    Then I should be on page for article "A breaking news item"
+    And I should see "Great article!"
+    And I should see "a@b.com"
+    And there should be "1" comment in the database
+
+
+
+
+
+
+
+
+  #
+  # Scenario: Viewing list of articles on the application's landing page
+  #   Given I am on the landing page
+  #   And I click on the link "A breaking news item"
+  #
+  #
+  #
+  #
+  #   Given I fill in field "comment" with "Great article!" under article "A breaking news item"
+  #   And I fill in field "Email" with "a@b.com" under article "A breaking news item"
+  #   And I click on the link "Submit" to article "A breaking news item"
+  #   Then I should see content "Great article"
+  #   And I should see link "a@b.com"
 
 
 
