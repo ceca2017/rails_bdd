@@ -26,3 +26,10 @@ Feature: Add a comment to an article
     Then I should be on page for article "A breaking news item"
     And I should see "Agree!"
     And there should be "2" comment in the database
+
+  Scenario: Trying to submit a comment w/out any content (comment text) should not add any record to the db
+    Given I visit the page for article "A breaking news item"
+    Then I should see content "Some really breaking action"
+    Given I click on "Submit"
+    Then I should be on page for article "A breaking news item"
+    And there should be "0" comment in the database
