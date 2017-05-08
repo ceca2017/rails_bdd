@@ -4,8 +4,8 @@ Given(/^I visit the page for article "([^"]*)"$/) do |title|
   visit article_path(article)
 end
 
-Then(/^I should see content "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see content "([^"]*)"$/) do |content|
+  expect(page).to have_content content
 end
 
 Given(/^I fill in field "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
