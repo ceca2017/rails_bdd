@@ -1,5 +1,7 @@
-Given(/^I visit the page for article "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I visit the page for article "([^"]*)"$/) do |title|
+  article = Article.where(title: title).first
+  # visit "/articles/#{article.id}"
+  visit article_path(article)
 end
 
 Then(/^I should see content "([^"]*)"$/) do |arg1|
