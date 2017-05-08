@@ -10,13 +10,7 @@ Feature: Add a comment to an article
     | Learn Rails 5         | Build awesome rails applications    |
 
   Scenario: Viewing list of articles on the application's landing page
-    When I am on the landing page
-    Then I should see "A breaking news item"
-    And I should see "Some really breaking action"
-    And I should see "Learn Rails 5"
-    And I should see "Build awesome rails applications"
-    Given I click on the link "Add comment"
-    And I fill in field "Comment" with "Great article!" under article "A breaking news item"
+    Given I fill in field "Comment" with "Great article!" under article "A breaking news item"
     And I fill in field "Email" with "a@b.com" under article "A breaking news item"
     And I click on the link "Submit" to article "A breaking news item"
     Then I should see content "Great article"
