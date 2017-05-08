@@ -21,8 +21,8 @@ Then(/^I should be on page for article "([^"]*)"$/) do |title|
   expect(page.current_path).to eq article_path(article)
 end
 
-Then(/^there should be "([^"]*)" comment in the database$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^there should be "([^"]*)" comment in the database$/) do |number|
+  expect(Comment.count).to eq number.to_i
 end
 
 
